@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm  navbar-dark py-3 px-2" style="background-color: rgba(0, 0, 0, 0.573);">
+
+         <a  class="navbar-brand gradient" href=""><h3>HOME</h3></a>
+
+
+    
+    <ul class="navbar-nav ms-auto">
+     <li class="nav-item">
+        {% if products %}
+          
+        
+           <form action="." method="GET">
+            <div class="form-group">
+
+                <input type="text" name="params" class="form-control" id="exampleInputEmail1"  placeholder="Search here">
+               
+            </div>
+            </form>
+            {% endif %}
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link"  href="" style="color:  #8db3d4;"> <b>USERS LIST</b> </a>
+        </li>
+        
+
+        
+        <li class="nav-item">
+            <a class="nav-link"  href="{% url 'products' %}" style="color:  #8db3d4;"> <b>PRODUCT LIST</b> </a>
+        </li>
+       
+
+        
+  
+
+        
+        {% if request.session.id %}
+        <li class="nav-item">
+            <a class="nav-link"  href="{% url 'logout' %}" style="color:  #8db3d4;">LOGOUT</a>
+        </li>
+        
+        {% else %}
+        
+        <li class="nav-item">
+            <a class="nav-link"  href="{% url 'login' %}" style="color:  #8db3d4;">LOGIN</a>
+        </li>
+        
+        <li class="nav-item">
+          
+            <a class="nav-link"  href="" style="color:  #8db3d4;">REGISTER</a>
+        </li>
+          
+        {% endif %}
+
+
+
+        
+    </ul>
+</nav>
